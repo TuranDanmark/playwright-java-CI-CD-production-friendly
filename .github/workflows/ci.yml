@@ -1,0 +1,33 @@
+name: Playwright Java Docker CI + Allure
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t playwright-java-tests .
+
+      - name: Run tests in Docker
+        run: docker run --rm -v ${{ github.workspace }}/target:/app/target playwright-java-tests
+
+      - name: Generate Allure Report
+        run: mvn allure:generate
+
+      - name: Deploy Allure Report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: target/allure-report
