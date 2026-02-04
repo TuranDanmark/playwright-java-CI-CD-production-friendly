@@ -4,6 +4,7 @@ import com.elvira.base.BaseTest;
 import com.elvira.pages.TodoPage;
 import com.elvira.utils.TestListener;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -16,6 +17,7 @@ import io.qameta.allure.*;
 @Feature("Todo Management")
 public class TodoTest extends BaseTest {
 
+@Tag("smoke")
 @Test
 @Story("User can add todo")
 @Description("Verify that user can add a new todo item")
@@ -27,6 +29,7 @@ todoPage.addTodo("Learn Playwright");
 assertThat(todoPage.getTodoItems()).hasCount(1);
 }
 
+@Tag("smoke")
 @Test
 void userCanAddTodo() {
     page.navigate("https://demo.playwright.dev/todomvc");
@@ -37,7 +40,7 @@ void userCanAddTodo() {
     assertThat(page.locator("text=Buy milk")).isVisible();
 }
 
-
+@Tag("smoke")
 @Test
 void userCanCompleteTodo() {
     TodoPage todoPage = new TodoPage(page);
@@ -50,6 +53,7 @@ void userCanCompleteTodo() {
 
 }
 
+@Tag("smoke")
 @Test
 void userCanFilterCompletedTasks() {
 

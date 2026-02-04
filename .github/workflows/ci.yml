@@ -1,6 +1,4 @@
 name: Playwright Java Docker CI + Allure
-
-
 on:
   push:
     branches: [ main ]
