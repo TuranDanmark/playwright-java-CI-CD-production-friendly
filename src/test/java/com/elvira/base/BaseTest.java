@@ -1,9 +1,11 @@
 package com.elvira.base;
 
 import com.elvira.config.Config;
+import com.elvira.utils.TestListener;
 import com.microsoft.playwright.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.nio.file.Paths;
 
@@ -14,6 +16,7 @@ public class BaseTest {
     protected BrowserContext context;
     protected Page page;
 
+    @ExtendWith(TestListener.class)
     @BeforeEach
     void setUp() {
 
