@@ -8,41 +8,22 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
-      pages: write
-      id-token: write
+    container:
+      image: mcr.microsoft.com/playwright/java:v1.42.0-jammy
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build Docker Image
-        run: docker build -t playwright-tests .
-
-      - name: Run Tests in Docker
-        run: docker run playwright-tests
-
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup JDK
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: '21'
-
-      - name: Install Playwright Browsers
-        run: mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install"
-
-      - name: Run Tests
+      - name: Run tests
         run: mvn clean test -Dheadless=true
 
       - name: Generate Allure Report
-        run: mvn allure:report
+        run: mvn allure:generate
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy Allure Report
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ./target/site/allure-maven-plugin/
+          publish_dir: target/allure-report
+
