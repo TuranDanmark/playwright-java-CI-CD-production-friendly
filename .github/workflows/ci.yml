@@ -34,20 +34,14 @@ jobs:
       - name: Install Playwright Browsers
         run: mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install"
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
       - name: Run Tests
         run: mvn clean test -Dheadless=true
 
       - name: Generate Allure Report
-        run: |
-           npx allure-commandline generate target/allure-results --clean -o target/site/allure-allure-report
+        run: mvn allure:report
 
-      - name: Deploy Allure Report to GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: target/allure-report
+          publish_dir: ./target/site/allure-maven-plugin/
