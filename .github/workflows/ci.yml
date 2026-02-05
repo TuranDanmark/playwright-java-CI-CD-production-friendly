@@ -43,10 +43,11 @@ jobs:
         run: mvn clean test -Dheadless=true
 
       - name: Generate Allure Report
-        run: mvn allure:report
+        run: |
+           npx allure-commandline generate target/allure-results --clean -o target/site/allure-allure-report
 
       - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./target/site/allure-maven-plugin/
+          publish_dir: target/allure-report
