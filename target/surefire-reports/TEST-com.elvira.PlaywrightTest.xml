@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.elvira.PlaywrightTest" time="40.684" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.elvira.PlaywrightTest" time="38.014" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\halat\AppData\Local\Temp\surefire7950591987300393819\surefirebooter-20260206225229490_3.jar C:\Users\halat\AppData\Local\Temp\surefire7950591987300393819 2026-02-06T22-52-29_063-jvmRun1 surefire-20260206225229490_1tmp surefire_0-20260206225229490_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\halat\AppData\Local\Temp\surefire11910921777434267587\surefirebooter-20260206231014338_3.jar C:\Users\halat\AppData\Local\Temp\surefire11910921777434267587 2026-02-06T23-10-13_954-jvmRun1 surefire-20260206231014338_1tmp surefire_0-20260206231014338_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\halat\playwright-java-project-production-ready\target\test-classes;C:\Users\halat\playwright-java-project-production-ready\target\classes;C:\Users\halat\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar;C:\Users\halat\.m2\repository\com\microsoft\playwright\playwright\1.41.2\playwright-1.41.2.jar;C:\Users\halat\.m2\repository\com\google\code\gson\gson\2.8.9\gson-2.8.9.jar;C:\Users\halat\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\halat\.m2\repository\com\microsoft\playwright\driver\1.41.2\driver-1.41.2.jar;C:\Users\halat\.m2\repository\com\microsoft\playwright\driver-bundle\1.41.2\driver-bundle-1.41.2.jar;C:\Users\halat\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\halat\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\halat\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\halat\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\halat\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\halat\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\halat\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\halat\.m2\repository\io\qameta\allure\allure-junit5\2.25.0\allure-junit5-2.25.0.jar;C:\Users\halat\.m2\repository\io\qameta\allure\allure-junit-platform\2.25.0\allure-junit-platform-2.25.0.jar;C:\Users\halat\.m2\repository\io\qameta\allure\allure-java-commons\2.25.0\allure-java-commons-2.25.0.jar;C:\Users\halat\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\halat\.m2\repository\io\qameta\allure\allure-model\2.25.0\allure-model-2.25.0.jar;C:\Users\halat\.m2\repository\io\qameta\allure\allure-test-filter\2.25.0\allure-test-filter-2.25.0.jar;C:\Users\halat\.m2\repository\org\junit\platform\junit-platform-launcher\1.9.2\junit-platform-launcher-1.9.2.jar;C:\Users\halat\.m2\repository\org\scala-lang\scala-library\2.13.0\scala-library-2.13.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\halat\AppData\Local\Temp\surefire7950591987300393819\surefirebooter-20260206225229490_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\halat\AppData\Local\Temp\surefire11910921777434267587\surefirebooter-20260206231014338_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.9+7-LTS-338"/>
@@ -59,6 +59,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="userCanAddTodoItem" classname="com.elvira.tests.TodoTest" time="40.495"/>
-  <testcase name="openPlaywrightSite" classname="com.elvira.PlaywrightTest" time="40.494"/>
+  <testcase name="userCanAddTodoItem" classname="com.elvira.tests.TodoTest" time="37.583"/>
+  <testcase name="openPlaywrightSite" classname="com.elvira.PlaywrightTest" time="37.813"/>
 </testsuite>

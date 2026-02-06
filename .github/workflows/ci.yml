@@ -38,7 +38,7 @@ jobs:
         run: mvn clean test -Dheadless=true
 
       - name: Generate Allure Report
-        run: mvn allure:report
+        run: mvn allure:generate
 
       - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
