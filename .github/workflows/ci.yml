@@ -38,10 +38,8 @@ jobs:
         run: mvn clean test -Dheadless=true
  
       - name: Generate Allure Report
-        run: |
-          mvn allure:report
-          mvn allure:serve
-
+        run: mvn allure:report
+         
       - name: Check Allure Report
         run: ls -la target/allure-report
 
