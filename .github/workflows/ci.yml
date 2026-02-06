@@ -14,10 +14,15 @@ jobs:
       pages: write
       id-token: write
 
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Build Docker Image
+        run: docker build -t playwright-tests .
+
+      - name: Run Tests in Docker
+        run: docker run playwright-tests
 
       - name: Setup JDK 21
         uses: actions/setup-java@v4

@@ -4,6 +4,5 @@ com\elvira\utils\TestListener.class
 com\elvira\PlaywrightTest.class
 com\elvira\tests\HomePageTest.class
 com\elvira\tests\TodoTest.class
-com\elvira\AppTest.class
 com\elvira\config\Config.class
 com\elvira\base\BaseTest.class
