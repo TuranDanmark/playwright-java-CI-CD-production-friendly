@@ -19,8 +19,8 @@ jobs:
       - name: Build Docker Image
         run: docker build -t playwright-tests .
 
-      - name: Run Tests in Docker
-        run: docker run playwright-tests
+      - name: Run Tests and Generate Report in Docker
+        run: docker run -v ${{ github.workspace }}/target:/app/target playwright-tests
 
       - name: Checkout repository
         uses: actions/checkout@v4
