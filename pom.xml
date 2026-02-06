@@ -5,13 +5,13 @@
   <artifactId>playwright-java-project-production-ready</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>playwright-java-project-production-ready</name>
-  <url>http://maven.apache.org</url>
     <properties>
     <java.version>21</java.version>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
   </properties>
+  <name>playwright-java-project-production-ready</name>
+  <url>http://maven.apache.org</url>
   <dependencies>
   <dependency>
   <groupId>com.microsoft.playwright</groupId>
@@ -37,14 +37,11 @@
   </dependencies>
   <build>
     <plugins>
-<plugin>
-    <groupId>io.qameta.allure</groupId>
-    <artifactId>allure-maven</artifactId>
-    <version>2.12.0</version>
-    <configuration>
-        <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
-    </configuration>
-</plugin>
+    <plugin>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-maven</artifactId>
+        <version>2.12.0</version>
+    </plugin>
     <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>exec-maven-plugin</artifactId>
@@ -54,7 +51,15 @@
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-surefire-plugin</artifactId>
     <version>3.2.5</version>
-         </plugin>
+            <configuration>
+            <rerunFailingTestsCount>1</rerunFailingTestsCount>
+                <properties>
+        <configurationParameters>
+            junit.jupiter.execution.parallel.enabled=true
+        </configurationParameters>
+    </properties>
+            </configuration>
+            </plugin>
     </plugins>
 </build>
 </project>
