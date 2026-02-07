@@ -54,10 +54,7 @@
             <configuration>
             <rerunFailingTestsCount>1</rerunFailingTestsCount>
                 <properties>
-        <configurationParameters>
-            junit.jupiter.execution.parallel.enabled=true
-        </configurationParameters>
-    </properties>
+            </properties>
             </configuration>
             </plugin>
     </plugins>
