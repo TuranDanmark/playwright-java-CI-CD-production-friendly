@@ -3,14 +3,13 @@ package com.elvira.tests;
 import com.elvira.base.BaseTest;
 import com.elvira.pages.TodoPage;
 import com.elvira.utils.TestListener;
+import io.qameta.allure.*;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
-
-import io.qameta.allure.*;
 
 @ExtendWith(TestListener.class)
 @Epic("Todo App")
