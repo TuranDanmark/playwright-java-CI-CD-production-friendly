@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Feb 07 19:22:40 UTC 2026","Sat Feb 07 19:22:44 UTC 2026","3877","","com.elvira.tests.HomePageTest","","com.elvira.tests.HomePageTest","UserCanOpenDocsPage","UserCanOpenDocsPage()","Verify that user can asserthat Get started"
+"passed","Sat Feb 07 19:22:40 UTC 2026","Sat Feb 07 19:22:44 UTC 2026","3589","","com.elvira.tests.TodoTest","","com.elvira.tests.TodoTest","userCanFilterCompletedTasks","userCanFilterCompletedTasks()","Verify that user can add a new todo item"
+"passed","Sat Feb 07 19:22:40 UTC 2026","Sat Feb 07 19:22:44 UTC 2026","3532","","com.elvira.tests.TodoTest","","com.elvira.tests.TodoTest","userCanCompleteTodo","userCanCompleteTodo()","Assert that user can add a new todo item"
+"passed","Sat Feb 07 19:22:44 UTC 2026","Sat Feb 07 19:22:45 UTC 2026","1198","","com.elvira.tests.TodoTest","","com.elvira.tests.TodoTest","userCanAddTodo","userCanAddTodo()","Assert that user can add a new todo item"
+"passed","Sat Feb 07 19:22:40 UTC 2026","Sat Feb 07 19:22:44 UTC 2026","3534","","com.elvira.PlaywrightTest","","com.elvira.PlaywrightTest","openPlaywrightSite","openPlaywrightSite()",""
+"passed","Sat Feb 07 19:22:44 UTC 2026","Sat Feb 07 19:22:45 UTC 2026","1211","","com.elvira.tests.TodoTest","","com.elvira.tests.TodoTest","userCanAddTodoItem","userCanAddTodoItem()","Assert that user can add a new todo item"
