@@ -14,8 +14,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 @ExtendWith(TestListener.class)
-@Epic("Todo App")
-@Feature("Todo Management")
+@Epic("HomePage App")
+@Feature("HomePage Management")
 public class HomePageTest extends BaseTest {
 
     @Tag("regression")
