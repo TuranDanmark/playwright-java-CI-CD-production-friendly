@@ -1,8 +1,8 @@
-/app/src/test/java/com/elvira/pages/TodoPage.java
-/app/src/test/java/com/elvira/utils/TestListener.java
-/app/src/test/java/com/elvira/tests/TodoTest.java
-/app/src/test/java/com/elvira/PlaywrightTest.java
-/app/src/test/java/com/elvira/tests/HomePageTest.java
-/app/src/test/java/com/elvira/base/BaseTest.java
-/app/src/test/java/com/elvira/config/Config.java
-/app/src/test/java/com/elvira/pages/HomePage.java
+C:\Users\halat\playwright-java-project-production-ready\src\test\java\com\elvira\base\BaseTest.java
+C:\Users\halat\playwright-java-project-production-ready\src\test\java\com\elvira\config\Config.java
+C:\Users\halat\playwright-java-project-production-ready\src\test\java\com\elvira\pages\HomePage.java
+C:\Users\halat\playwright-java-project-production-ready\src\test\java\com\elvira\pages\TodoPage.java
+C:\Users\halat\playwright-java-project-production-ready\src\test\java\com\elvira\PlaywrightTest.java
+C:\Users\halat\playwright-java-project-production-ready\src\test\java\com\elvira\tests\HomePageTest.java
+C:\Users\halat\playwright-java-project-production-ready\src\test\java\com\elvira\tests\TodoTest.java
+C:\Users\halat\playwright-java-project-production-ready\src\test\java\com\elvira\utils\TestListener.java

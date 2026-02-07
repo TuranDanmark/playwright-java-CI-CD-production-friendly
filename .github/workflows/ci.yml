@@ -17,16 +17,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ---------- BUILD DOCKER ----------
       - name: Build Docker Image
         run: docker build -t playwright-tests .
 
-      # ---------- RUN TESTS IN DOCKER ----------
       - name: Run Tests in Docker
-        run: |
-          docker run \
-            -v ${{ github.workspace }}/target:/app/target \
-            playwright-tests
+        run: docker run playwright-tests
 
       # ---------- SETUP JAVA FOR REPORT ----------
       - name: Setup JDK 21
