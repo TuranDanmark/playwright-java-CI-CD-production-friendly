@@ -3,7 +3,6 @@ name: Playwright Java CI
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:
 
 jobs:
   test:
@@ -18,32 +17,31 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # ---------- BUILD DOCKER ----------
       - name: Build Docker Image
         run: docker build -t playwright-tests .
 
+      # ---------- RUN TESTS IN DOCKER ----------
       - name: Run Tests in Docker
-        run: docker run -v ${{ github.workspace }}/target:/app/target playwright-tests
+        run: |
+          docker run \
+            -v ${{ github.workspace }}/target:/app/target \
+            playwright-tests
 
-      - name: Setup JDK 21
+      # ---------- SETUP JAVA FOR REPORT ----------
+      - name: Setup JDK
         uses: actions/setup-java@v4
         with:
-          distribution: temurin
-          java-version: 21
-          cache: maven
+          distribution: 'temurin'
+          java-version: '21'
 
-      - name: Install Playwright Browsers
-        run: mvn exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install"
-
-      - name: Run Tests
-        run: mvn clean test -Dheadless=true
-
+      # ---------- GENERATE ALLURE REPORT ----------
       - name: Generate Allure Report
         run: mvn allure:report
 
-      - name: Deploy Allure Report to GitHub Pages
+      # ---------- DEPLOY TO GITHUB PAGES ----------
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./target/site/allure-maven-plugin
-          publish_branch: gh-pages
-          force_orphan: true
