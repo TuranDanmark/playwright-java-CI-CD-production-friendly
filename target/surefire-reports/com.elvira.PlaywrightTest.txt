@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.elvira.PlaywrightTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 53.12 s -- in com.elvira.PlaywrightTest
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 127.0 s -- in com.elvira.PlaywrightTest
