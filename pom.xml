@@ -55,8 +55,8 @@
         <systemPropertyVariables>
             <allure.results.directory>target/allure-results</allure.results.directory>
         </systemPropertyVariables>
-    </configuration>
-</plugin>
+        </configuration>
+    </plugin>
     </plugins>
     </build>
 </project>
