@@ -31,6 +31,9 @@ assertThat(todoPage.getTodoItems()).hasCount(1);
 
 @Tag("smoke")
 @Test
+@Story("User can add todo")
+@Description("Verify that user can add a new todo item")
+@Severity(SeverityLevel.CRITICAL)
 void userCanAddTodo() {
     page.navigate("https://demo.playwright.dev/todomvc");
 
@@ -42,6 +45,9 @@ void userCanAddTodo() {
 
 @Tag("smoke")
 @Test
+@Story("User can add todo")
+@Description("Verify that user can add a new todo item")
+@Severity(SeverityLevel.CRITICAL)
 void userCanCompleteTodo() {
     TodoPage todoPage = new TodoPage(page);
     todoPage.navigate();
@@ -55,6 +61,9 @@ void userCanCompleteTodo() {
 
 @Tag("smoke")
 @Test
+@Story("User can add todo")
+@Description("Verify that user can add a new todo item")
+@Severity(SeverityLevel.CRITICAL)
 void userCanFilterCompletedTasks() {
 
     TodoPage todoPage = new TodoPage(page);
