@@ -15,7 +15,8 @@ jobs:
       id-token: write
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Build Docker Image
         run: docker build -t playwright-tests .
@@ -29,9 +30,6 @@ jobs:
           distribution: temurin
           java-version: 21
           cache: maven
-
-      - name: Checkout repository
-        uses: actions/checkout@v4
 
       - name: Install Playwright Browsers
         run: mvn exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install"
