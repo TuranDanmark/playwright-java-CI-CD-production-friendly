@@ -70,7 +70,6 @@ jobs:
           mkdir -p target/allure-results
           cp -r allure-results-temp/**/allure-results/* target/allure-results || true
 
-
       - name: Generate Allure Report
         run: mvn allure:report
 

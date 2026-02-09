@@ -30,7 +30,7 @@ public class BaseTest {
 
         try (PrintWriter writer = new PrintWriter(envFile)) {
             writer.println("Browser=Chromium");
-            writer.println("Headless=" + System.getProperty("headless", "false"));
+            writer.println("Headless=" + System.getProperty("headless", "true"));
             writer.println("OS=" + System.getProperty("os.name"));
             writer.println("Java=" + System.getProperty("java.version"));
             writer.println("Environment=" + System.getProperty("env", "local"));
@@ -47,6 +47,13 @@ public class BaseTest {
         playwright = Playwright.create();
 
         BrowserType browserType;
+
+        String browserName = System.getProperty("browser", "chromium");
+        boolean headless = Boolean.parseBoolean(System.getProperty("headless", "true"));
+
+        BrowserType.LaunchOptions options = new BrowserType.LaunchOptions()
+                .setHeadless(headless);
+
 
         switch (Config.browser().toLowerCase()) {
             case "firefox":
