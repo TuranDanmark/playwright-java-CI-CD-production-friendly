@@ -3,11 +3,21 @@ name: Playwright Java CI
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
+
   test:
+    name: Run Tests (${{ matrix.browser }})
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
+
 
     permissions:
       contents: write
@@ -36,7 +46,30 @@ jobs:
         run: mvn exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install"
 
       - name: Run Tests
-        run: mvn clean test -Dheadless=true
+        run: mvn clean test -Dbrowser=${{ matrix.browser }} -Dheadless=true
+
+      - name: Upload Allure Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-${{ matrix.browser }}
+          path: target/allure-results
+
+      - name: Upload Surefire Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-${{ matrix.browser }}
+          path: target/surefire-reports
+
+      - name: Download Allure Results
+        uses: actions/download-artifact@v4
+        with:
+          path: allure-results-temp
+
+      - name: Merge Allure Results
+        run: |
+          mkdir -p target/allure-results
+          cp -r allure-results-temp/**/allure-results/* target/allure-results || true
+
 
       - name: Generate Allure Report
         run: mvn allure:report
