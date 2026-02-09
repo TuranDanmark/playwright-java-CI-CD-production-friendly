@@ -1,12 +1,14 @@
 package com.elvira.base;
 
 import com.elvira.config.Config;
-import com.elvira.utils.TestListener;
 import com.microsoft.playwright.*;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.extension.ExtendWith;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+
+import java.io.File;
+import java.io.PrintWriter;
 import java.nio.file.Paths;
 
 public class BaseTest {
@@ -16,7 +18,29 @@ public class BaseTest {
     protected BrowserContext context;
     protected Page page;
 
-    @ExtendWith(TestListener.class)
+    @BeforeAll
+    static void writeEnvironmentInfo() {
+    try {
+        File resultsDir = new File("target/allure-results");
+        if (!resultsDir.exists()) {
+            resultsDir.mkdirs();
+        }
+
+        File envFile = new File(resultsDir, "environment.properties");
+
+        try (PrintWriter writer = new PrintWriter(envFile)) {
+            writer.println("Browser=Chromium");
+            writer.println("Headless=" + System.getProperty("headless", "false"));
+            writer.println("OS=" + System.getProperty("os.name"));
+            writer.println("Java=" + System.getProperty("java.version"));
+            writer.println("Environment=" + System.getProperty("env", "local"));
+        }
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
     @BeforeEach
     void setUp() {
 
@@ -58,4 +82,6 @@ public class BaseTest {
         if (browser != null) browser.close();
         if (playwright != null) playwright.close();
     }
+
+
 }
