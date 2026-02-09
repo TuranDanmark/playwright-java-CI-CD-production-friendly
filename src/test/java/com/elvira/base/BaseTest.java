@@ -10,7 +10,6 @@ import org.junit.jupiter.api.BeforeEach;
 import java.io.File;
 import java.io.PrintWriter;
 import java.nio.file.Paths;
-import java.util.List;
 
 public class BaseTest {
 
@@ -48,14 +47,6 @@ public class BaseTest {
         playwright = Playwright.create();
 
         BrowserType browserType;
-
-        String browserName = System.getProperty("browser", "chromium");
-        boolean headless = Boolean.parseBoolean(System.getProperty("headless", "true"));
-
-                BrowserType.LaunchOptions options = new BrowserType.LaunchOptions()
-    .setHeadless(true)
-    .setArgs(List.of("--no-sandbox"));
-
 
         switch (Config.browser().toLowerCase()) {
             case "firefox":
