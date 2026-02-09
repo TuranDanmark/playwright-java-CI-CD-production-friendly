@@ -7,7 +7,7 @@ public class Config {
     }
 
     public static boolean headless() {
-        return Boolean.parseBoolean(System.getProperty("headless", "true"));
+        return Boolean.parseBoolean(System.getProperty("headless", "false"));
     }
 
     public static String baseUrl() {
