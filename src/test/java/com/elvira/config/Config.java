@@ -6,6 +6,7 @@ public class Config {
         return System.getProperty("browser", "chromium");
     }
 
+
     public static boolean headless() {
         return Boolean.parseBoolean(System.getProperty("headless", "true"));
     }
